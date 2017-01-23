@@ -1,31 +1,30 @@
 <?php 
-require_once("../clases/AccesoDatos.php");
-require_once("../clases/Usuario.php");
 
-session_start();
-$usuario = $_POST['usuario'];
-$clave = $_POST['clave'];
-$recordar = $_POST['recordarme'];
+function SendContactEmail() {
 
-$userBuscado = Usuario::TraerPorEmail($usuario);
+	$name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+    $from = 'From: ReLatIBaS'; 
+    $to = 'power500@gmail.com'; 
+    $subject = 'Hallo';
+    //$human = $_POST['human'];
+    $human = 4;
+            
+    $body = "From: $name\n E-Mail: $email\n Message:\n $message";
+                
+    if ($human == '4') {
+        
+        if (mail ($to, $subject, $body, $from)) { 
+            echo '<p>Your message has been sent!</p>';
+        } else { 
+            echo '<p>Something went wrong, go back and try again!</p>'; 
+        } 
+    //} else if ($_POST['submit'] && $human != '4') {
+    } else if ($human != '4') {
+        echo '<p>You answered the anti-spam question incorrectly!</p>';
+    }
 
-if ($userBuscado) {
-	if ($userBuscado->GetClave()==$clave) {
-		if($recordar=="true")
-		{
-			setcookie("registro",$usuario,  time()+36000 , '/');
-		} else {
-			setcookie("registro",$usuario,  time()-36000 , '/');
-		}
-		$_SESSION['registrado']=$userBuscado->GetNombre();
-		$_SESSION['rol']=$userBuscado->GetRol();
-		$retorno="ingreso";
-	} else {
-		$retorno= "errorClave";
-	}
-} else {
-	$retorno= "No-esta";
 }
 
-echo $retorno;
 ?>

@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>ReLATIBAS</title>
-    <meta name="description" content="Red Latinoamericana de Investigación Básica y Sueño." />
+    <title>ReLatIBaS</title>
+    <meta name="description" content="Red Latinoamericana de Investigación Básica de Sueño." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Codeply">
     
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/ionicons.min.css" />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
+
   <body>
     <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -26,18 +27,18 @@
                 </button>
                 <!-- http://ionicons.com/ -->
                 <!-- ion-ios-pulse / ion-ios-pulse-strong / ion-ios-analytics-outline -->
-                <a class="navbar-brand page-scroll" href="#first"><i class="ion-ios-pulse-strong"></i> ReLATIBAS</a>
+                <a class="navbar-brand page-scroll" href="#first"><i class="ion-ios-pulse-strong"></i> ReLatIBaS</a>
             </div>
             <div class="navbar-collapse collapse" id="bs-navbar">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a class="page-scroll" href="#one">Registrarse</a>
+                        <a class="page-scroll" href="#info">Información</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#two">Información</a>
+                        <a class="page-scroll" href="#contacto">Contacto</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#last">Contacto</a>
+                        <a class="page-scroll" href="#registrar">Registrarse</a>
                     </li>
                 </ul>
                 <!--
@@ -54,8 +55,8 @@
     <header id="first">
         <div class="header-content">
             <div class="inner">
-                <h1 class="cursive">ReLATIBAS</h1>
-                <h4>Red Latinoamericana de Investigación Básica y Sueño</h4>
+                <h1 class="cursive">ReLatIBaS</h1>
+                <h4>Red Latinoamericana de Investigación Básica de Sueño</h4>
                 <br />
                 <hr>
                 <br />
@@ -68,13 +69,19 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="row">
                             <div class="col-sm-4 col-xs-4 text-center">
-                                <i class="btn icon-lg ion-paper-airplane" title="Registrarse"></i>
+                                <a class="page-scroll" href="#info" style="color:#fff;">
+                                    <i class="btn icon-lg ion-ios-information-outline" title="Información"></i>
+                                </a>
                             </div>
                             <div class="col-sm-4 col-xs-4 text-center">
-                                <i class="btn icon-lg ion-android-mail" title="Contacto"></i>
+                                <a class="page-scroll" href="#contacto" style="color:#fff;">
+                                    <i class="btn icon-lg ion-android-mail" title="Contacto"></i>
+                                </a>
                             </div>
                             <div class="col-sm-4 col-xs-4 text-center">
-                                <i class="btn icon-lg ion-ios-information-outline" title="Información"></i>
+                                <a class="page-scroll" href="#registrar" style="color:#fff;">
+                                    <i class="btn icon-lg ion-paper-airplane" title="Registrarse"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -84,13 +91,13 @@
         </div>
     </header>
 
-    <script type="text/javascript">Mostrar('SeccionUno');</script>
+    <!-- <script type="text/javascript">Mostrar('SeccionUno');</script> -->
 
-    <section class="bg-primary" id="one">
+    <section id="info">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
-                    <h2 class="margin-top-0 text-primary">Built On The Bootstrap Grid</h2>
+                    <h2 class="margin-top-0 text-primary">Red Latinoamericana de Investigación Básica de Sueño</h2>
                     <br>
                     <p class="text-faded">
                         Bootstrap's responsive grid comes in 4 sizes or "breakpoints": tiny (xs), small(sm), medium(md) and large(lg). These 4 grid sizes enable you create responsive layouts that behave accordingly on different devices.
@@ -101,49 +108,46 @@
         </div>
     </section>
 
-    <section id="two">
+    <section class="bg-primary" id="contacto">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="margin-top-0 text-primary">Flexible Layouts</h2>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="margin-top-0 wow fadeIn">Contáctenos</h2>
                     <hr class="primary">
+                    <p>Envíenos un correo electrónico y nos pondremos en contacto con usted.</p>
                 </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 text-center">
-                    <div class="feature">
-                        <i class="icon-lg ion-android-laptop wow fadeIn" data-wow-delay=".3s"></i>
-                        <h3>Responsive</h3>
-                        <p class="text-muted">Your site looks good everywhere</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 text-center">
-                    <div class="feature">
-                        <i class="icon-lg ion-social-sass wow fadeInUp" data-wow-delay=".2s"></i>
-                        <h3>Customizable</h3>
-                        <p class="text-muted">Easy to theme and customize with SASS</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 text-center">
-                    <div class="feature">
-                        <i class="icon-lg ion-ios-star-outline wow fadeIn" data-wow-delay=".3s"></i>
-                        <h3>Consistent</h3>
-                        <p class="text-muted">A mature, well-tested, stable codebase</p>
-                    </div>
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <form class="contact-form row">
+                        <div class="col-md-6">
+                            <label></label>
+                            <input type="text" class="form-control" placeholder="Nombre" name="name" id="name">
+                        </div>
+                        <div class="col-md-6">
+                            <label></label>
+                            <input type="text" class="form-control" placeholder="Correo electrónico" name="email" id="email">
+                        </div>
+                        <div class="col-md-12">
+                            <label></label>
+                            <textarea class="form-control" rows="9" placeholder="Mensaje" name="message" id="message"></textarea>
+                        </div>
+                        
+                        <div class="col-md-4 col-md-offset-4">
+                            <label></label>
+                            <button type="button" onclick="SendContactEmail()" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg">Enviar <i class="ion-android-arrow-forward"></i></button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="last">
+    <section id="registrar">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="margin-top-0 wow fadeIn">Get in Touch</h2>
+                    <h2 class="margin-top-0 wow fadeIn">Registración</h2>
                     <hr class="primary">
-                    <p>We love feedback. Fill out the form below and we'll get back to you as soon as possible.</p>
+                    <p>Ingrese sus datos para registrarse como miembro de la red y acceder al sitio completo.</p>
                 </div>
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <form class="contact-form row">
@@ -161,7 +165,7 @@
                         </div>
                         <div class="col-md-4 col-md-offset-4">
                             <label></label>
-                            <button type="button" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg">Send <i class="ion-android-arrow-forward"></i></button>
+                            <button type="button" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg">Enviar <i class="ion-android-arrow-forward"></i></button>
                         </div>
                     </form>
                 </div>
@@ -255,8 +259,10 @@
         <div class="modal-content">
         	<div class="modal-body">
         		<h2 class="text-center">Nice Job!</h2>
-        		<p class="text-center">You clicked the button, but it doesn't actually go anywhere because this is only a demo.</p>
-        		<p class="text-center"><a href="http://www.bootstrapzero.com">Learn more at BootstrapZero</a></p>
+        		
+                <p class="text-center" id="contactResponse"></p>
+        		
+
         		<br/>
         		<button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">OK <i class="ion-android-close"></i></button>
         	</div>
@@ -270,5 +276,6 @@
     <script src="./js/jquery.easing.min.js"></script>
     <script src="./js/wow.js"></script>
     <script src="./js/scripts.js"></script>
+    <script src="./js/ajax.js"></script>
   </body>
 </html>

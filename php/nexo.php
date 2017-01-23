@@ -1,12 +1,13 @@
 <?php 
-require_once('./SERVIDOR/lib/nusoap.php');
-require_once("clases/AccesoDatos.php");
-require_once("clases/Estacionamiento.php");
-require_once("clases/Vehiculo.php");
+require_once('../php/funciones.php');
 
-$queHago = $_POST['queHacer'];
+$whatToDo = $_POST['doWhat'];
 
-switch ($queHago) {
+switch ($whatToDo) {
+	case 'SendContactEmail':
+		SendContactEmail();
+		break;
+	/*	
 	case 'MostrarInicio':
 		include("partes/inicio.php");
 		break;
@@ -35,17 +36,15 @@ switch ($queHago) {
 	case 'BorrarVehiculo':
 		Vehiculo::Borrar($_POST['patente']);
 		break;
-	/*
-	case 'TraerVehiculo':
-		$veh = Vehiculo::TraerPorPatente($_POST['id']);		
-		echo json_encode($veh);
-		break;
 	*/
 
 	default:
 		# code...
 		break;
 }
+
+
+
 
 function TraerEstacionadosWS($host) {
 	//$host = 'http://localhost/TP-Laurenzano/SERVIDOR/ws.php';
