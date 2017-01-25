@@ -4,28 +4,66 @@ function SendContactEmail()
 	var name = $("#name").val();
 	var email = $("#email").val();
 	var message = $("#message").val();
+	var grecaptcharesponse = $("#g-recaptcha-response").val();
+	//var human = $("#human").val();
 
+	//if ($.trim(name)=='' || $.trim(email)=='' || $.trim(message)=='' || $.trim(human)=='') {
+	if ($.trim(name)=='' || $.trim(email)=='' || $.trim(message)=='') {
+		$("#contactResponseTitle").html('Error');
+		$("#contactResponse").html('Por favor complete todos los campos.');
+	} else {
+		var ajaxFunction=$.ajax({
+			url:"./php/nexo.php",
+			type:"post",
+			data:{
+				doWhat:'SendContactEmail',
+				name:name,
+				email:email,
+				message:message,
+				grecaptcharesponse:grecaptcharesponse
+				//human:human
+			}
+		});
+		ajaxFunction.done(function(response) {
+			switch(response) {
+			    case 'ok':
+			        $("#contactResponseTitle").html(sentMsgTitle);
+					$("#contactResponse").html(sentMsgContent);	// Your message has been sent!
 
-	var ajaxFunction=$.ajax({
-		url:"./php/nexo.php",
-		type:"post",
-		data:{
-			doWhat:'SendContactEmail',
-			name:name,
-			email:email,
-			message:message
-		}
-	});
-	ajaxFunction.done(function(response) {
-		$("#contactResponse").html(response);
-	});
-	ajaxFunction.fail(function(response) {
-		$("#contactResponse").html(response.responseText);
-	});
-	ajaxFunction.always(function(response) {
-		//alert("siempre "+response.statusText);
+					$("#name").val('');
+					$("#email").val('');
+					$("#message").val('');
+					//$("#human").val('');
+			        break;
+			    case 'humanFail':
+			        $("#contactResponseTitle").html(humanErrorLabel);
+					$("#contactResponse").html(humanErrorMsg);	// Robot verification failed, please try again.
+					//$("#human").val('');
+					// grecaptcha.reset()   ????
+			        break;
+			    case 'humanEmpty':
+			        $("#contactResponseTitle").html(humanEmptyLabel);
+					$("#contactResponse").html(humanEmptyMsg);	// Something went wrong, go back and try again!
+			        break;
+			    case 'error':
+			        $("#contactResponseTitle").html(notSentMsgTitle);
+					$("#contactResponse").html(notSentMsgContent);	// Something went wrong, go back and try again!
+			        break;
+			    default:
+			        
+			} 
 
-	});
+			
+		});
+		ajaxFunction.fail(function(response) {
+			$("#contactResponseTitle").html('Error');
+			$("#contactResponse").html(response.responseText);
+		});
+		ajaxFunction.always(function(response) {
+			//alert("siempre "+response.statusText);
+
+		});
+	}
 }
 
 

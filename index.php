@@ -2,7 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>ReLatIBaS</title>
+    
+    <?php require_once('./php/translations.php') ?>
+    
+    <title><?=get_Text('relatibas')?></title>
     <meta name="description" content="Red Latinoamericana de Investigación Básica de Sueño." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Codeply">
@@ -13,6 +16,10 @@
     <link rel="stylesheet" href="./css/animate.min.css" />
     <link rel="stylesheet" href="./css/ionicons.min.css" />
     <link rel="stylesheet" href="./css/styles.css" />
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    
+
   </head>
 
   <body>
@@ -27,18 +34,18 @@
                 </button>
                 <!-- http://ionicons.com/ -->
                 <!-- ion-ios-pulse / ion-ios-pulse-strong / ion-ios-analytics-outline -->
-                <a class="navbar-brand page-scroll" href="#first"><i class="ion-ios-pulse-strong"></i> ReLatIBaS</a>
+                <a class="navbar-brand page-scroll" href="#first"><i class="ion-ios-pulse-strong"></i> <?=get_Text('relatibas')?></a>
             </div>
             <div class="navbar-collapse collapse" id="bs-navbar">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a class="page-scroll" href="#info">Información</a>
+                        <a class="page-scroll" href="#info"><?=get_Text('information')?></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contacto">Contacto</a>
+                        <a class="page-scroll" href="#contacto"><?=get_Text('contact')?></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#registrar">Registrarse</a>
+                        <a class="page-scroll" href="#registrar"><?=get_Text('register')?></a>
                     </li>
                 </ul>
                 <!--
@@ -55,12 +62,12 @@
     <header id="first">
         <div class="header-content">
             <div class="inner">
-                <h1 class="cursive">ReLatIBaS</h1>
-                <h4>Red Latinoamericana de Investigación Básica de Sueño</h4>
+                <h1 class="cursive"><?=get_Text('relatibas')?></h1>
+                <h4><?=get_Text('relatibasDesc')?></h4>
                 <br />
                 <hr>
                 <br />
-                <h3>Este sitio se encuentra en construcción</h4>
+                <h3><?=get_Text('underConstruction')?></h4>
                 <br />
                 <hr>
                 <br />
@@ -70,17 +77,17 @@
                         <div class="row">
                             <div class="col-sm-4 col-xs-4 text-center">
                                 <a class="page-scroll" href="#info" style="color:#fff;">
-                                    <i class="btn icon-lg ion-ios-information-outline" title="Información"></i>
+                                    <i class="btn icon-lg ion-ios-information-outline" title="<?=get_Text('information')?>"></i>
                                 </a>
                             </div>
                             <div class="col-sm-4 col-xs-4 text-center">
                                 <a class="page-scroll" href="#contacto" style="color:#fff;">
-                                    <i class="btn icon-lg ion-android-mail" title="Contacto"></i>
+                                    <i class="btn icon-lg ion-android-mail" title="<?=get_Text('contact')?>"></i>
                                 </a>
                             </div>
                             <div class="col-sm-4 col-xs-4 text-center">
                                 <a class="page-scroll" href="#registrar" style="color:#fff;">
-                                    <i class="btn icon-lg ion-paper-airplane" title="Registrarse"></i>
+                                    <i class="btn icon-lg ion-paper-airplane" title="<?=get_Text('register')?>"></i>
                                 </a>
                             </div>
                         </div>
@@ -97,12 +104,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
-                    <h2 class="margin-top-0 text-primary">Red Latinoamericana de Investigación Básica de Sueño</h2>
+                    <h2 class="margin-top-0 text-primary"><?=get_Text('relatibasDesc')?></h2>
                     <br>
                     <p class="text-faded">
-                        Bootstrap's responsive grid comes in 4 sizes or "breakpoints": tiny (xs), small(sm), medium(md) and large(lg). These 4 grid sizes enable you create responsive layouts that behave accordingly on different devices.
+                        <?=get_Text('infoContent')?>
                     </p>
-                    <a href="#three" class="btn btn-default btn-xl page-scroll">Learn More</a>
                 </div>
             </div>
         </div>
@@ -112,28 +118,37 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="margin-top-0 wow fadeIn">Contáctenos</h2>
+                    <h2 class="margin-top-0 wow fadeIn"><?=get_Text('contactUs')?></h2>
                     <hr class="primary">
-                    <p>Envíenos un correo electrónico y nos pondremos en contacto con usted.</p>
+                    <p><?=get_Text('contactUsContent')?></p>
                 </div>
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <form class="contact-form row">
                         <div class="col-md-6">
                             <label></label>
-                            <input type="text" class="form-control" placeholder="Nombre" name="name" id="name">
+                            <input type="text" class="form-control" placeholder="<?=get_Text('nameLabel')?>" name="name" id="name">
                         </div>
                         <div class="col-md-6">
                             <label></label>
-                            <input type="text" class="form-control" placeholder="Correo electrónico" name="email" id="email">
+                            <input type="text" class="form-control" placeholder="<?=get_Text('emailLabel')?>" name="email" id="email">
                         </div>
                         <div class="col-md-12">
                             <label></label>
-                            <textarea class="form-control" rows="9" placeholder="Mensaje" name="message" id="message"></textarea>
+                            <textarea class="form-control" rows="5" placeholder="<?=get_Text('messageLabel')?>" name="message" id="message"></textarea>
                         </div>
-                        
+                        <div class="col-md-4 col-md-offset-4">
+                            <!--
+                            public:  6LfTGBMUAAAAAIHhb_jQ06BxdTL72zLNFSrZtira
+                            local:   6LfTDhMUAAAAAPK-0Qwjlehd9tTR4ssWb0dUWSFv
+                            -->
+                            <label></label>
+                            <div class="g-recaptcha" data-sitekey="6LfTDhMUAAAAAPK-0Qwjlehd9tTR4ssWb0dUWSFv" data-theme="dark"></div>
+
+
+                        </div>
                         <div class="col-md-4 col-md-offset-4">
                             <label></label>
-                            <button type="button" onclick="SendContactEmail()" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg">Enviar <i class="ion-android-arrow-forward"></i></button>
+                            <button type="button" onclick="SendContactEmail()" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg"><?=get_Text('sendButtonLabel')?> <i class="ion-android-arrow-forward"></i></button>
                         </div>
                     </form>
                 </div>
@@ -145,27 +160,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="margin-top-0 wow fadeIn">Registración</h2>
+                    <h2 class="margin-top-0 wow fadeIn"><?=get_Text('registerTitle')?></h2>
                     <hr class="primary">
-                    <p>Ingrese sus datos para registrarse como miembro de la red y acceder al sitio completo.</p>
+                    <p><?=get_Text('registerContent')?></p>
                 </div>
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <form class="contact-form row">
                         <div class="col-md-6">
                             <label></label>
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" class="form-control" placeholder="<?=get_Text('nameLabel')?>">
                         </div>
                         <div class="col-md-6">
                             <label></label>
-                            <input type="text" class="form-control" placeholder="Correo electrónico">
+                            <input type="text" class="form-control" placeholder="<?=get_Text('emailLabel')?>">
                         </div>
                         <div class="col-md-12">
                             <label></label>
-                            <textarea class="form-control" rows="9" placeholder="Mensaje"></textarea>
+                            <textarea class="form-control" rows="9" placeholder="<?=get_Text('messageLabel')?>"></textarea>
                         </div>
                         <div class="col-md-4 col-md-offset-4">
                             <label></label>
-                            <button type="button" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg">Enviar <i class="ion-android-arrow-forward"></i></button>
+                            <button type="button" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg"><?=get_Text('sendButtonLabel')?> <i class="ion-android-arrow-forward"></i></button>
                         </div>
                     </form>
                 </div>
@@ -258,11 +273,9 @@
         <div class="modal-dialog modal-sm">
         <div class="modal-content">
         	<div class="modal-body">
-        		<h2 class="text-center">Nice Job!</h2>
+        		<h2 class="text-center" id="contactResponseTitle">Nice Job!</h2>
+        		<p class="text-center" id="contactResponse"></p>
         		
-                <p class="text-center" id="contactResponse"></p>
-        		
-
         		<br/>
         		<button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">OK <i class="ion-android-close"></i></button>
         	</div>
@@ -277,5 +290,7 @@
     <script src="./js/wow.js"></script>
     <script src="./js/scripts.js"></script>
     <script src="./js/ajax.js"></script>
+
+    <sc
   </body>
 </html>
