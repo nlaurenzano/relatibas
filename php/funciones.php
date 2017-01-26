@@ -5,14 +5,14 @@ function SendContactEmail() {
 
     //$human = $_POST['human'];
 
-    if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
+    if(isset($_POST['grecaptcharesponse']) && !empty($_POST['grecaptcharesponse'])) {
         // your site secret key
         // public:  6LfTGBMUAAAAAEbGluBBA-mJdHPIPCcu1OS6dAyk
         // local:   6LfTDhMUAAAAAGHBcDEMhBlzZo44T8dE2DZE97zA
-        $secret = '6LfTDhMUAAAAAGHBcDEMhBlzZo44T8dE2DZE97zA';
+        $secret = '6LfTGBMUAAAAAEbGluBBA-mJdHPIPCcu1OS6dAyk';
         
         //get verify response data
-        $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
+        $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['grecaptcharesponse']);
 
         $responseData = json_decode($verifyResponse);
 
@@ -39,7 +39,9 @@ function SendContactEmail() {
             // More headers
             $headers .= 'From:'.$name.' <'.$email.'>' . "\r\n";
 
-            if (mail ($to, $subject, $body, $from)) { 
+            //mail($para, $titulo, $mensaje, $cabeceras);
+            //if (mail ($to, $subject, $headers, $from)) { 
+            if (mail ($to, $subject, $htmlContent, $headers)) { 
                 echo 'ok';  // Your message has been sent!
             } else { 
                 echo 'error';   // Something went wrong, go back and try again!

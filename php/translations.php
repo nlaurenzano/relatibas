@@ -21,8 +21,10 @@
  			"sendButtonLabel"=>"Enviar",
  			"registerTitle"=>"Registración",
  			"registerContent"=>"Ingrese sus datos para registrarse como miembro de la red y acceder al sitio completo.",
+ 			"contactEmptyLabel"=>"¡Atención!",
+ 			"contactEmptyContent"=>"Por favor complete todos los campos.",
  			"humanErrorLabel"=>"Error",
- 			"humanErrorMsg"=>"La verificación antispam ha fallado, por favor vuleva a intentarlo.",
+ 			"humanErrorMsg"=>"La verificación antispam ha fallado, por favor vuelva a intentarlo.",
  			"humanEmptyLabel"=>"Error",
  			"humanEmptyMsg"=>"Por favor complete el campo reCAPTCHA.",
  			"sentMsgTitle"=>"¡Gracias!",
@@ -52,6 +54,8 @@
  			"sendButtonLabel"=>"Send",
  			"registerTitle"=>"Registration",
  			"registerContent"=>"Fill the form to register as a member of the network and get access to the full site.",
+ 			"contactEmptyLabel"=>"Attention!",
+ 			"contactEmptyContent"=>"All contact fields are required.",
  			"humanErrorLabel"=>"Error",
  			"humanErrorMsg"=>"Robot verification failed, please try again.",
  			"humanEmptyLabel"=>"Error",
@@ -75,6 +79,8 @@ function get_Text($textKey) {
 ?>
 
 <script>
+    var contactEmptyLabel = '<?=get_Text('contactEmptyLabel')?>';
+    var contactEmptyContent = '<?=get_Text('contactEmptyContent')?>';
     var sentMsgTitle = '<?=get_Text('sentMsgTitle')?>';
     var sentMsgContent = '<?=get_Text('sentMsgContent')?>';
     var notSentMsgTitle = '<?=get_Text('notSentMsgTitle')?>';

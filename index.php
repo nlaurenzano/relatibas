@@ -142,7 +142,7 @@
                             local:   6LfTDhMUAAAAAPK-0Qwjlehd9tTR4ssWb0dUWSFv
                             -->
                             <label></label>
-                            <div class="g-recaptcha" data-sitekey="6LfTDhMUAAAAAPK-0Qwjlehd9tTR4ssWb0dUWSFv" data-theme="dark"></div>
+                            <div class="g-recaptcha" data-sitekey="6LfTGBMUAAAAAIHhb_jQ06BxdTL72zLNFSrZtira" data-theme="dark"></div>
 
 
                         </div>

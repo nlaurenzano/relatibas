@@ -4,13 +4,15 @@ function SendContactEmail()
 	var name = $("#name").val();
 	var email = $("#email").val();
 	var message = $("#message").val();
-	var grecaptcharesponse = $("#g-recaptcha-response").val();
+
+	var grecaptcharesponse = grecaptcha.getResponse();
+
 	//var human = $("#human").val();
 
 	//if ($.trim(name)=='' || $.trim(email)=='' || $.trim(message)=='' || $.trim(human)=='') {
 	if ($.trim(name)=='' || $.trim(email)=='' || $.trim(message)=='') {
-		$("#contactResponseTitle").html('Error');
-		$("#contactResponse").html('Por favor complete todos los campos.');
+		$("#contactResponseTitle").html(contactEmptyLabel);
+		$("#contactResponse").html(contactEmptyContent);
 	} else {
 		var ajaxFunction=$.ajax({
 			url:"./php/nexo.php",
@@ -33,13 +35,12 @@ function SendContactEmail()
 					$("#name").val('');
 					$("#email").val('');
 					$("#message").val('');
-					//$("#human").val('');
+					grecaptcha.reset();
 			        break;
 			    case 'humanFail':
 			        $("#contactResponseTitle").html(humanErrorLabel);
 					$("#contactResponse").html(humanErrorMsg);	// Robot verification failed, please try again.
-					//$("#human").val('');
-					// grecaptcha.reset()   ????
+					grecaptcha.reset();
 			        break;
 			    case 'humanEmpty':
 			        $("#contactResponseTitle").html(humanEmptyLabel);
@@ -48,10 +49,11 @@ function SendContactEmail()
 			    case 'error':
 			        $("#contactResponseTitle").html(notSentMsgTitle);
 					$("#contactResponse").html(notSentMsgContent);	// Something went wrong, go back and try again!
+					grecaptcha.reset();
 			        break;
 			    default:
 			        
-			} 
+			}
 
 			
 		});
